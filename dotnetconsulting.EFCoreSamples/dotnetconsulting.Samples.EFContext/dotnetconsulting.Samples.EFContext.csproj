@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SqlResources\dbo_GetSpeakerDown.sql" />
+    <None Remove="SqlResources\dbo_GetSpeakerUp.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SqlResources\dbo_GetSpeakerDown.sql" />
+    <EmbeddedResource Include="SqlResources\dbo_GetSpeakerUp.sql" />
+    <EmbeddedResource Include="SqlResources\StringLikeDown.sql" />
+    <EmbeddedResource Include="SqlResources\StringLikeUp.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotnetconsulting.Samples.Domains\dotnetconsulting.Samples.Domains.csproj" />
+  </ItemGroup>
+
+</Project>
